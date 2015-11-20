@@ -15,7 +15,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        //NSThread.sleepForTimeInterval(2.0)//延长3秒
         
         // 友盟统计 nil为空时 默认appstore渠道 不同渠道 统计数据都算到第一个安装渠道
         MobClick.startWithAppkey(UMAppKey, reportPolicy: BATCH, channelId: nil)
@@ -24,8 +23,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let majorVersion: AnyObject? = infoDictionary!["CFBundleShortVersionString"]
         let appversion = majorVersion as! String
         MobClick.setAppVersion(appversion)
-        MobClick.setLogEnabled(true)//集成测试
+//        MobClick.setLogEnabled(true)//集成测试
 
+        NSThread.sleepForTimeInterval(1.0)//延长1秒
         return true
     }
 
