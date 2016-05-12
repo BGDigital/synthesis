@@ -30,6 +30,7 @@ class PageInfo {
     }
     
     init(j: JSON) {
+        //2016-05-12 add
         self.currentPage = j["page"].intValue
         self.pageCount = j["pageCount"].intValue
         self.pageSize = j["pageSize"].intValue
